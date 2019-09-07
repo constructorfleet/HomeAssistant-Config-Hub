@@ -9,5 +9,3 @@ Create a `secrets.yaml` file with the following properties defined
 	* `zwave_security_key` - the sequence of hex codes for secure inclusion
 	* `zwave_interval` - the duration of the mesh network poll loop
 	* `zigbee_path` - the path to the zigbee device
-
-## 
