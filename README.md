@@ -1,0 +1,1 @@
+# Configuration for hubs used by Home-Assistant cluster
