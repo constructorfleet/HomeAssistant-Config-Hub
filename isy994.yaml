@@ -1,0 +1,4 @@
+host: !secret isy_host
+username: !secret isy_username
+password: !secret isy_password
+ignore_string: hidden
