@@ -1,8 +1,4 @@
-zwave:
-  usb_path: !secret zstick_path
-  network_kdey: !secret zwave_security_key
-  polling_interval: !secret zwave_interval
-  
-zha:
-  usb_path: !secret zigbee_path
-  enable_quirks: true
+homeassistant: !include core.yaml
+
+zwave: !include zwave.yaml
+zha: !include zigbee.yaml

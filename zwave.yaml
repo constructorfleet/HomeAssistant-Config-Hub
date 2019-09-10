@@ -1,0 +1,3 @@
+usb_path: !secret zstick_path
+network_kdey: !secret zwave_security_key
+polling_interval: !secret zwave_interval
