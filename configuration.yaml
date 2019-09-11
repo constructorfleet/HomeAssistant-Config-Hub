@@ -1,5 +1,10 @@
 homeassistant: !include core.yaml
 
+http:
+  server_port: !secret hub_server_port
+
+frontend:
+
 zwave: !include zwave.yaml
 zha: !include zigbee.yaml
 isy994: !include isy994.yaml
