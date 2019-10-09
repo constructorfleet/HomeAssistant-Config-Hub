@@ -6,8 +6,6 @@ homeassistant:
   time_zone: !secret home_timezone
   name: Hub
 
-frontend:
-
 zwave: !include zwave.yaml
 zha: !include zigbee.yaml
 isy994: !include isy994.yaml
