@@ -1,7 +1,10 @@
-homeassistant: !include core.yaml
-
-http:
-  server_port: !secret hub_server_port
+homeassistant:
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: imperial
+  time_zone: !secret home_timezone
+  name: Hub
 
 frontend:
 
