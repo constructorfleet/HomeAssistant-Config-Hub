@@ -10,6 +10,6 @@ http:
 
 frontend:
 
-zwave: !include zwave.yaml
-zha: !include zigbee.yaml
+# zwave: !include zwave.yaml
+# zha: !include zigbee.yaml
 isy994: !include isy994.yaml
