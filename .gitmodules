@@ -1,3 +1,6 @@
 [submodule "cusom_components/view_event"]
 	path = cusom_components/view_event
 	url = https://github.com/constructorfleet/HomeAssistant-Component-ViewEvent.git
+[submodule "custom_components/view_event"]
+	path = custom_components/view_event
+	url = https://github.com/constructorfleet/HomeAssistant-Component-ViewEvent.git
