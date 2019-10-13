@@ -4,7 +4,12 @@ homeassistant:
   elevation: !secret home_elevation
   unit_system: imperial
   time_zone: !secret home_timezone
-  name: Hub
+  name: Hubs
+  auth_providers:
+    - type: homeassistant
+    - type: trusted_networks
+      trusted_networks:
+        - 172.31.0.0/16
 
 http:
 
