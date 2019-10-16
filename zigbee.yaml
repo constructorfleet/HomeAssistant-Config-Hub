@@ -1,2 +1,2 @@
-usb_path: !secret zigbee_path
+usb_path: !secret zigbee_usb_path
 enable_quirks: true
