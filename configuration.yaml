@@ -16,6 +16,8 @@ http:
 
 frontend:
 
+config:
+
 view_component:
 
 zwave: !include zwave.yaml
