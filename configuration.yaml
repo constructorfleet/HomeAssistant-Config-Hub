@@ -6,10 +6,11 @@ homeassistant:
   time_zone: !secret home_timezone
   name: Hubs
   auth_providers:
-    - type: homeassistant
     - type: trusted_networks
       trusted_networks:
         - 172.19.0.0/16
+      allow_bypass_login: true
+    - type: homeassistant
 
 http:
 
