@@ -9,6 +9,7 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 172.19.0.0/16
+        - 10.0.12.0/24
       allow_bypass_login: true
     - type: homeassistant
 
