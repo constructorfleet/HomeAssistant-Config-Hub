@@ -14,7 +14,8 @@ homeassistant:
     - type: homeassistant
 
 http:
-
+  base_url: https://automation.prettybaked.com
+  
 frontend:
 
 config:
