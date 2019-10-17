@@ -20,7 +20,7 @@ frontend:
 
 config:
 
-view_component:
+# view_component:
 
 zwave: !include zwave.yaml
 zha: !include zigbee.yaml
