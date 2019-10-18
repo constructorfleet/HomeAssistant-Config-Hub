@@ -16,7 +16,7 @@ homeassistant:
 
 http:
   base_url: https://automation.prettybaked.com
-  server_port: !secret hbs_server_public_port
+  server_port: !secret hubs_server_public_port
   
 frontend:
 
