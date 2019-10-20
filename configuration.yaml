@@ -14,6 +14,13 @@ homeassistant:
       allow_bypass_login: true
     - type: homeassistant
 
+view_event:
+  components:
+    - camera
+    - media_player
+    - device_tracker
+    - person
+
 http:
   base_url: https://automation.prettybaked.com
   server_port: !secret hubs_server_public_port
