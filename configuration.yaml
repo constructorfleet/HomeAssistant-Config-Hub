@@ -15,11 +15,8 @@ homeassistant:
     - type: homeassistant
 
 view_event:
-  components:
-    - camera
-    - media_player
-    - device_tracker
-    - person
+  name: hubs
+  components: []
 
 http:
   base_url: https://automation.prettybaked.com
