@@ -15,7 +15,7 @@ homeassistant:
     - type: homeassistant
 
 view_event:
-  name: hubs
+  instance_name: hubs
   components: []
 
 http:
