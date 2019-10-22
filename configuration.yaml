@@ -16,7 +16,13 @@ homeassistant:
 
 view_event:
   name: hubs
-  components: []
+  components:
+    - light
+    - lock
+    - switch
+    - cover
+    - remote
+    - media_player
 
 http:
   base_url: https://automation.prettybaked.com
