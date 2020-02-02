@@ -25,7 +25,7 @@ homeassistant:
 #    - media_player
 
 http:
-  base_url: http://hubs.constructorfleet.iot:3000
+  base_url: http://hubs.constructorfleet.iot
 #  server_port: !secret hubs_server_public_port
   
 frontend:
