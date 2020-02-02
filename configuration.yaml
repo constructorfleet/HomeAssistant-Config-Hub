@@ -14,19 +14,19 @@ homeassistant:
       allow_bypass_login: true
     - type: homeassistant
 
-view_event:
-  name: hubs
-  components:
-    - light
-    - lock
-    - switch
-    - cover
-    - remote
-    - media_player
+#view_event:
+#  name: hubs
+#  components:
+#    - light
+#    - lock
+#    - switch
+#    - cover
+#    - remote
+#    - media_player
 
 http:
-  base_url: https://automation.prettybaked.com
-  server_port: !secret hubs_server_public_port
+#  base_url: https://automation.prettybaked.com
+#  server_port: !secret hubs_server_public_port
   
 frontend:
 
@@ -37,5 +37,5 @@ config:
 isy994: !include isy994.yaml
 
 mqtt: !include mqtt.yaml
-# mqtteventstream: !include eventstream.yaml
-mqtt_remoteinstance: !include mqtt_remoteinstance.yaml
+mqtteventstream: !include eventstream.yaml
+#mqtt_remoteinstance: !include mqtt_remoteinstance.yaml
