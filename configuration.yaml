@@ -25,6 +25,7 @@ homeassistant:
 #    - media_player
 
 http:
+  base_url: http://appliances.constructorfleet.iot
   
 frontend:
 
