@@ -8,6 +8,7 @@ home-assistant.log
 .HA_VERSION
 
 __pycache__/
+**/__pycache__/
 
 .google*
 .google*.cookies
