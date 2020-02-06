@@ -1,3 +1,4 @@
+name: hubs
 publish_topic: events/slaves/hubs
 subscribe_topic: events/master
 ignore_event:
