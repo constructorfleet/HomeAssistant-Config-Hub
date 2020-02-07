@@ -1,7 +1,7 @@
 name: hubs
 publish_topic: events/slaves/hubs
 subscribe_topic: events/master
-public_state_topic_base: states
+state_topic: states
 ignore_event:
   - call_service
   - component_loaded
