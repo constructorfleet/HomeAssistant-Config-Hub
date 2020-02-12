@@ -25,7 +25,7 @@ homeassistant:
 #    - media_player
 
 http:
-  base_url: http://appliances.constructorfleet.iot
+  base_url: https://hubs.automation.home.prettybaked.com
   
 frontend:
 
