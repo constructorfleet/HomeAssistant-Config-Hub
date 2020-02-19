@@ -1,6 +1,5 @@
 publish_topic: events/slaves/hubs
 state_publish_topic: states/hubs
-state_publish_topic: true
 subscribe_topic: events/master
 subscribe_rules_topic: events/rules
 ignore_event:
