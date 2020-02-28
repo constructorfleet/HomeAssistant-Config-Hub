@@ -8,7 +8,7 @@ homeassistant:
   auth_providers:
     - type: trusted_networks
       trusted_networks:
-        - 172.19.0.0/16
+        - 172.20.0.0/16
         - 10.0.12.0/24
         - 10.0.11.174/32
       allow_bypass_login: true
