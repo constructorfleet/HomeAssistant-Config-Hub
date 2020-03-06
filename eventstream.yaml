@@ -6,3 +6,4 @@ ignore_event:
   - call_service
   - component_loaded
   - platform_discovered
+  - ios.notification_action_fired
