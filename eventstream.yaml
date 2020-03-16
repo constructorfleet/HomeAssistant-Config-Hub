@@ -8,3 +8,4 @@ ignore_event:
   - component_loaded
   - platform_discovered
   - ios.notification_action_fired
+  - request_routes
