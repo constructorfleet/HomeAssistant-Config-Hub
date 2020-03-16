@@ -1,0 +1,9 @@
+components:
+ - light
+ - lock
+ - switch
+ - cover
+ - fan
+ - remote
+ - media_player
+ - webhook

@@ -14,15 +14,7 @@ homeassistant:
       allow_bypass_login: true
     - type: homeassistant
 
-#view_event:
-#  name: hubs
-#  components:
-#    - light
-#    - lock
-#    - switch
-#    - cover
-#    - remote
-#    - media_player
+view_event: !include view_event.yaml
 
 http:
   base_url: https://hubs.automation.home.prettybaked.com
@@ -31,10 +23,7 @@ frontend:
 
 config:
 
-# zwave: !include zwave.yaml
-# zha: !include zigbee.yaml
 isy994: !include isy994.yaml
 
 mqtt: !include mqtt.yaml
 mqtteventstream: !include eventstream.yaml
-#mqtt_remoteinstance: !include mqtt_remoteinstance.yaml
