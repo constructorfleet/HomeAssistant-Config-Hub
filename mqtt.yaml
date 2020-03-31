@@ -6,7 +6,7 @@ birth_message:
   retain: true
   payload: >
     {
-      "event_type": "instance_state.connected"
+      "event_type": "instance_state.connected",
       "event_data": "hubs"
     }
 will_message:
@@ -15,6 +15,6 @@ will_message:
   retain: true
   payload: >
     {
-      "event_type": "instance_state.disconnected"
+      "event_type": "instance_state.disconnected",
       "event_data": "hubs"
     }
