@@ -1,4 +1,5 @@
 broker: automation_mqtt
+port: 1883
 client_id: hubs
 birth_message:
   topic: events/slaves/hubs/instance_state
