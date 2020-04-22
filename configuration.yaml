@@ -25,5 +25,7 @@ config:
 
 isy994: !include isy994.yaml
 
+homekit:
+
 mqtt: !include mqtt.yaml
 mqtteventstream: !include eventstream.yaml
