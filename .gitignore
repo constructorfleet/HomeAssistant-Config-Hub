@@ -22,3 +22,4 @@ icloud/
 
 ldap-auth.cfg
 known_devices.yaml
+push.sh
