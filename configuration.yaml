@@ -24,6 +24,9 @@ frontend:
 config:
 
 isy994: !include isy994.yaml
+hue:
+  bridges:
+    - !include_dir_list hue_bridges
 
 mqtt: !include mqtt.yaml
 mqtteventstream: !include eventstream.yaml
