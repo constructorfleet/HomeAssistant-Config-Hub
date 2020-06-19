@@ -1,0 +1,3 @@
+platform: nanoleaf
+host: 10.0.11.150
+token: !secret nanoleaf_panel_1_token
