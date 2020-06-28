@@ -1,4 +1,4 @@
-broker: automation_mqtt
+broker: homebridge-iot.home.prettybaked.com
 port: 1883
 client_id: hubs
 birth_message:
