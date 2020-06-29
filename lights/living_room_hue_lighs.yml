@@ -1,0 +1,7 @@
+platform: group
+name: Living Room Hue Lights
+entities:
+  - light.hue_play_1
+  - light.hue_play_2
+  - light.couch_lights
+  - light.tv_backlight
