@@ -23,11 +23,9 @@ def coerce_ip(value):
 
 
 PLATFORM_SCHEMA = cv.PLATFORM_SCHEMA.extend({
-    voluptuous.Required(CONF_IP_ADDRESS): vol.All(
-            cv.string,
-            coerce_ip),
-    voluptuous.Required(CONF_ACCESS_TOKEN): cv.string,
-    voluptuous.Optional(CONF_NAME, DEFAULT_NAME): cv.string,
+    vol.Required(CONF_IP_ADDRESS): vol.All(cv.string,  coerce_ip),
+    vol.Required(CONF_ACCESS_TOKEN): cv.string,
+    vol.Optional(CONF_NAME, DEFAULT_NAME): cv.string,
 })
 
 
