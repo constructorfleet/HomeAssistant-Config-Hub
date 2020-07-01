@@ -11,7 +11,7 @@ from. import services
 
 PLATFORM_SCHEMA = config_validation.PLATFORM_SCHEMA.extend({
     voluptuous.Required(const.CONF_IP_ADDRESS): config_validation.string,
-    voluptuous.Required(const.CONF_ACCESS_TOKEN): config_validation.string
+    voluptuous.Required(const.CONF_ACCESS_TOKEN): config_validation.string,
     voluptuous.Optional(const.CONF_NAME): config_validation.string,
 })
 
