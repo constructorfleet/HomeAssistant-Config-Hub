@@ -99,7 +99,7 @@ class HueSyncBoxRemote(remote.RemoteEntity):
     self._sync_active = None
     self._sync_mode = None
 
-    hass.data[DOMAIN][self.entity_id] = self
+    hass.data[HUE_SYNC_DOMAIN][self.entity_id] = self
     _LOGGER.debug(f'Set up for {self.entity_id} completed.')
 
   # API token set up.
