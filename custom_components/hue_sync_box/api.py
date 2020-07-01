@@ -8,7 +8,7 @@ import json
 import logging
 import requests
 
-from . import const
+from .const import *
 
 
 _LOGGER = logging.getLogger(__name__)
@@ -55,48 +55,6 @@ class HueSyncBoxApi(object):
     response = self._call_api_endpoint(SyncBoxEndpoints.DEVICE_DETAILS)
     return response.json()
 
-  def request_access_token(self, instance_name):
-    """Gets access token from API.
-
-    Args:
-      instance_name: Name of the instance for which to generate token.
-
-    Returns:
-      Access token. None if not found.
-    """
-    _LOGGER.debug(
-        f'Requested Philips Hue Sync Box access token for {instance_name}.')
-
-    payload = {
-        'appName': 'hass',
-        'instanceName': instance_name,
-    }
-    response = self._call_api_endpoint(SyncBoxEndpoints.REGISTRATIONS, payload)
-    response_json = response.json()
-
-    if response_json.get('code') is not None:
-      error_code = response_json.get('code')
-      error_message = response_json.get('message')
-      _LOGGER.debug(
-          f'Unable to retrieve access token. '
-          f'Error {error_code}: {error_message}.')
-      return None
-
-    access_token = response_json.get('accessToken')
-    if access_token:
-      _LOGGER.debug(f'Access token found from API.')
-      self.set_access_token(access_token)
-
-    return access_token
-
-  def set_access_token(self, access_token):
-    """Sets internal access token.
-
-    Args:
-      access_token: Access token to interact with API.
-    """
-    self._access_token = access_token
-
   def set_brightness(self, brightness):
     """Sets HDMI Sync Box to a certain brightness.
 
@@ -136,18 +94,18 @@ class HueSyncBoxApi(object):
       intensity: Intensity level.
     """
     sync_mode = str(sync_mode).lower()
-    if sync_mode not in const.ACTIVE_SYNC_MODES:
+    if sync_mode not in SOURCE_INPUT_VALUES:
       raise ValueError(
           f'Sync mode {sync_mode} does not support intensity. '
           'Change mode first to one that supports intensity: '
-          f'{const.ACTIVE_SYNC_MODES}.')
+          f'{ACTIVE_SYNC_MODES}.')
 
     intensity = str(intensity).lower()
     if intensity == 'extreme':
       intensity = 'intense'
-    if intensity not in const.INTENSITY_VALUES:
+    if intensity not in INTENSITY_VALUES:
       raise ValueError('Invalid Intensity {}. Expected: {}.'.format(
-          intensity, const.INTENSITY_VALUES))
+          intensity, INTENSITY_VALUES))
 
     payload = {sync_mode: {'intensity': intensity}}
     response = self._call_api_endpoint(SyncBoxEndpoints.EXECUTION, payload)
@@ -160,9 +118,9 @@ class HueSyncBoxApi(object):
       sync_mode: Sync mode to which to set up Sync box.
     """
     sync_mode = str(sync_mode).lower()
-    if sync_mode not in const.SYNC_MODE_VALUES:
+    if sync_mode not in SYNC_MODE_VALUES:
       raise ValueError('Invalid Sync Mode {}. Expected: {}.'.format(
-          sync_mode, const.SYNC_MODE_VALUES))
+          sync_mode, SYNC_MODE_VALUES))
 
     payload = {'mode': sync_mode}
     response = self._call_api_endpoint(SyncBoxEndpoints.EXECUTION, payload)

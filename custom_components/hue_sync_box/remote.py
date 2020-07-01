@@ -11,7 +11,7 @@ from homeassistant.helpers import entity_platform
 from homeassistant import util
 
 from . import api
-from . import const
+from .const import *
 from . import services
 
 _LOGGER = logging.getLogger(__name__)
@@ -70,24 +70,24 @@ class HueSyncBoxRemote(remote.RemoteEntity):
   def __init__(self, config, hass):
     """Initializes the remote."""
     _LOGGER.info(
-        f'Started Hue Sync Box for IP {config.get(const.CONF_IP_ADDRESS)}')
+        f'Started Hue Sync Box for IP {config.get(CONF_IP_ADDRESS)}')
     self._config = config
     self._hass = hass
 
     # Config attributes.
-    self._ip_address = config.get(const.CONF_IP_ADDRESS)
-    self._name = config.get(const.CONF_NAME, const.DEVICE_DEFAULT_NAME)
+    self._ip_address = config.get(CONF_IP_ADDRESS)
+    self._name = config.get(CONF_NAME, DEVICE_DEFAULT_NAME)
     self._entity_id = util.slugify(self._name)
 
     # API interactions.
-    self._token_file_name = const.TOKEN_FILE.format(self._entity_id)
-    self._access_token = config.get(const.CONF_ACCESS_TOKEN)
+    self._token_file_name = TOKEN_FILE.format(self._entity_id)
+    self._access_token = config.get(CONF_ACCESS_TOKEN)
     self._entity_onboarding = False
     self._api = api.HueSyncBoxApi(self._ip_address, self._access_token)
 
     # Internal attributes.
     self._brightness = None
-    self._device_name = const.DEVICE_DEFAULT_NAME
+    self._device_name = DEVICE_DEFAULT_NAME
     self._hdmi_active = None
     self._hdmi_source = None
     self._input1 = None
@@ -99,7 +99,7 @@ class HueSyncBoxRemote(remote.RemoteEntity):
     self._sync_active = None
     self._sync_mode = None
 
-    hass.data[const.DOMAIN][self.entity_id] = self
+    hass.data[DOMAIN][self.entity_id] = self
     _LOGGER.debug(f'Set up for {self.entity_id} completed.')
 
   # API token set up.
@@ -281,14 +281,14 @@ class HueSyncBoxRemote(remote.RemoteEntity):
     self.set_sync_mode('powersave')
     self.update()
 
-  def turn_on(self, activity=const.DEFAULT_SYNC_MODE):
+  def turn_on(self, activity=DEFAULT_SYNC_MODE):
     """Turns on.
 
     Args:
       activity: Sync mode to which to start.
     """
     if not activity:
-      activity = const.DEFAULT_SYNC_MODE
+      activity = DEFAULT_SYNC_MODE
     self.set_sync_mode(activity)
     self.update()
 
@@ -312,14 +312,14 @@ class HueSyncBoxRemote(remote.RemoteEntity):
     info = self._api.get_device_details()
 
     device = info.get('device', {})
-    self._device_name = device.get('name', const.DEVICE_DEFAULT_NAME)
+    self._device_name = device.get('name', DEVICE_DEFAULT_NAME)
 
     execution = info.get('execution', {})
-    self._brightness = execution.get('brightness', const.DEFAULT_STR_VALUE)
-    self._hdmi_active = execution.get('hdmiActive', const.DEFAULT_STR_VALUE)
-    self._hdmi_source = execution.get('hdmiSource', const.DEFAULT_STR_VALUE)
-    self._sync_active = execution.get('syncActive', const.DEFAULT_STR_VALUE)
-    self._sync_mode = execution.get('mode', const.DEFAULT_STR_VALUE)
+    self._brightness = execution.get('brightness', DEFAULT_STR_VALUE)
+    self._hdmi_active = execution.get('hdmiActive', DEFAULT_STR_VALUE)
+    self._hdmi_source = execution.get('hdmiSource', DEFAULT_STR_VALUE)
+    self._sync_active = execution.get('syncActive', DEFAULT_STR_VALUE)
+    self._sync_mode = execution.get('mode', DEFAULT_STR_VALUE)
 
     video = execution.get('video', {})
     game = execution.get('game', {})

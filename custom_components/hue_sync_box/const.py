@@ -1,9 +1,8 @@
 """Constants and common variables for Philips Hue Sync Box."""
 
-from homeassistant import const
+from homeassistant.const import *
 
 # Set up.
-DOMAIN = 'hue_sync_box'
 PLATFORMS = ['remote']
 TOKEN_FILE = 'hue-sync-box-token-cache-{}'
 
@@ -35,7 +34,7 @@ DEFAULT_STR_VALUE = 'undefined'
 DEVICE_DEFAULT_NAME = 'Philips Hue Sync Box'
 
 # Accepted API values.
-INPUT_VALUES = ('1', '2', '3', '4')
+SOURCE_INPUT_VALUES = ('1', '2', '3', '4')
 ACTIVE_SYNC_MODES = ('video', 'music', 'game')
 DEFAULT_SYNC_MODE = 'passthrough'
 SYNC_MODE_VALUES = ('passthrough', 'powersave') + ACTIVE_SYNC_MODES
