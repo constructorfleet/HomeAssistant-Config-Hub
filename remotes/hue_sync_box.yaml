@@ -1,0 +1,4 @@
+platform: hue_sync_box
+name: Hue Sync Box
+ip_address: 10.0.12.21
+access_token: !secret hue_sync_access_token
