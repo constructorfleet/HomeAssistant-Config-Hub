@@ -30,5 +30,5 @@ PLATFORM_SCHEMA = cv.PLATFORM_SCHEMA.extend({
 
 
 async def async_setup(hass, config):
-  hass.data[DOMAIN] = {}
+  hass.data[HUE_SYNC_DOMAIN] = {}
   return True

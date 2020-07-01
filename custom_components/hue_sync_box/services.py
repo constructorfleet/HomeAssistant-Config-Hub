@@ -35,7 +35,7 @@ def register_services(hass):
 
   get_access_token_service = create_get_access_token_service(hass)
   hass.services.async_register(
-      DOMAIN,
+      HUE_SYNC_DOMAIN,
       SERVICE_GET_ACCESS_TOKEN,
       get_access_token_service,
       schema=GET_ACCESS_TOKEN_SCHEMA,
@@ -43,7 +43,7 @@ def register_services(hass):
 
   set_brightness_service = create_get_access_token_service(hass)
   hass.services.async_register(
-      DOMAIN,
+      HUE_SYNC_DOMAIN,
       SERVICE_SET_BRIGHTNESS,
       set_brightness_service,
       schema=SET_BRIGHTNESS_SCHEMA,
@@ -51,7 +51,7 @@ def register_services(hass):
 
   set_hdmi_input_service = create_set_hdmi_input_service(hass)
   hass.services.async_register(
-      DOMAIN,
+      HUE_SYNC_DOMAIN,
       SERVICE_SET_HDMI_INPUT,
       set_hdmi_input_service,
       schema=SET_HDMI_INPUT_SCHEMA,
@@ -59,7 +59,7 @@ def register_services(hass):
 
   set_intensity_service = create_set_intensity_service(hass)
   hass.services.async_register(
-      DOMAIN,
+      HUE_SYNC_DOMAIN,
       SERVICE_SET_INTENSITY,
       set_intensity_service,
       schema=SET_INTENSITY_SCHEMA,
@@ -67,7 +67,7 @@ def register_services(hass):
 
   sync_mode_service = create_set_sync_mode_service(hass)
   hass.services.async_register(
-      DOMAIN,
+      HUE_SYNC_DOMAIN,
       SERVICE_SET_SYNC_MODE,
       sync_mode_service,
       schema=SET_SYNC_MODE_SCHEMA,
@@ -76,11 +76,11 @@ def register_services(hass):
 
 def unregister_services(hass):
   """Unregisters custom services from hue_sync_box."""
-  hass.services.async_remove(DOMAIN, SERVICE_GET_ACCESS_TOKEN)
-  hass.services.async_remove(DOMAIN, SERVICE_SET_BRIGHTNESS)
-  hass.services.async_remove(DOMAIN, SERVICE_SET_HDMI_INPUT)
-  hass.services.async_remove(DOMAIN, SERVICE_SET_INTENSITY)
-  hass.services.async_remove(DOMAIN, SERVICE_SET_SYNC_MODE)
+  hass.services.async_remove(HUE_SYNC_DOMAIN, SERVICE_GET_ACCESS_TOKEN)
+  hass.services.async_remove(HUE_SYNC_DOMAIN, SERVICE_SET_BRIGHTNESS)
+  hass.services.async_remove(HUE_SYNC_DOMAIN, SERVICE_SET_HDMI_INPUT)
+  hass.services.async_remove(HUE_SYNC_DOMAIN, SERVICE_SET_INTENSITY)
+  hass.services.async_remove(HUE_SYNC_DOMAIN, SERVICE_SET_SYNC_MODE)
 
 
 def create_get_access_token_service(hass):
@@ -93,7 +93,7 @@ def create_get_access_token_service(hass):
     entity_ids = call.data.get(ATTR_ENTITY_ID)
 
     for entity_id in entity_ids:
-      entity = hass.data[DOMAIN].get(entity_id)
+      entity = hass.data[HUE_SYNC_DOMAIN].get(entity_id)
       if entity_id:
         await entity.async_get_access_token()
 
@@ -111,7 +111,7 @@ def create_set_brightness(hass):
     brightness = call.data.get(ATTR_BRIGHTNESS)
 
     for entity_id in entity_ids:
-      entity = hass.data[DOMAIN].get(entity_id)
+      entity = hass.data[HUE_SYNC_DOMAIN].get(entity_id)
       if entity_id:
         await entity.async_set_brightness(brightness)
 
@@ -129,7 +129,7 @@ def create_set_hdmi_input_service(hass):
     hdmi_input = call.data.get(ATTR_HDMI_INPUT)
 
     for entity_id in entity_ids:
-      entity = hass.data[DOMAIN].get(entity_id)
+      entity = hass.data[HUE_SYNC_DOMAIN].get(entity_id)
       if entity_id:
         await entity.async_set_hdmi_input(hdmi_input)
 
@@ -148,7 +148,7 @@ def create_set_intensity_service(hass):
     sync_mode = call.data.get(ATTR_SYNC_MODE)
 
     for entity_id in entity_ids:
-      entity = hass.data[DOMAIN].get(entity_id)
+      entity = hass.data[HUE_SYNC_DOMAIN].get(entity_id)
       if entity_id:
         await entity.async_set_intensity(intensity, sync_mode)
 
@@ -166,7 +166,7 @@ def create_set_sync_mode_service(hass):
     sync_mode = call.data.get(ATTR_SYNC_MODE)
 
     for entity_id in entity_ids:
-      entity = hass.data[DOMAIN].get(entity_id)
+      entity = hass.data[HUE_SYNC_DOMAIN].get(entity_id)
       if entity_id:
         await entity.async_set_sync_mode(sync_mode)
 

@@ -2,6 +2,8 @@
 
 from homeassistant.const import *
 
+HUE_SYNC_DOMAIN = 'hue_sync_box'
+
 # Set up.
 PLATFORMS = ['remote']
 TOKEN_FILE = 'hue-sync-box-token-cache-{}'
