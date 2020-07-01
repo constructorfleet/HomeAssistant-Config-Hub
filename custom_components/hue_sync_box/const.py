@@ -20,6 +20,7 @@ SERVICE_UPDATE = 'update'
 ATTR_HDMI_INPUT = 'hdmi_input'
 ATTR_INTENSITY = 'intensity'
 ATTR_SYNC_MODE = 'sync_mode'
+ATTR_BRIGHTNESS = CONF_BRIGHTNESS
 
 # Default values.
 DEFAULT_STR_VALUE = 'undefined'
