@@ -7,3 +7,8 @@ ignore_event:
   - call_service
   - ios.notification_action_fired
   - request_routes
+ignore_event_data_patterns:
+  - system_log
+  - mqtt.dump
+  - mobile_data
+  - person
