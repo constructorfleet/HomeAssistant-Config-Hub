@@ -1,0 +1,5 @@
+platform: group
+name: Living Room Ceiling Light
+entities:
+  - light.living_room_fan_control_light
+  - light.living_room_fan_light_bulbs 
