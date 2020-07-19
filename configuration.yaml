@@ -27,7 +27,7 @@ isy994: !include isy994.yaml
 hue:
   bridges: !include_dir_list hue_bridges
 remote: !include_dir_list remotes
-# light: !include_dir_list lights
+light: !include_dir_list lights
 
 
 mqtt: !include mqtt.yaml
