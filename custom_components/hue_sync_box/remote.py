@@ -344,6 +344,7 @@ class HueSyncBoxRemote(remote.RemoteEntity):
     self._input3 = input3.get('name', 'HDMI 3')
     input4 = hdmi.get('input4', {})
     self._input4 = input4.get('name', 'HDMI 4')
+    self.async_write_ha_state()
 
   # Async wrappers.
   async def async_get_access_token(self):
