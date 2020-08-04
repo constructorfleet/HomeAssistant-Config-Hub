@@ -1,5 +1,5 @@
 platform: template
-switches:
+lights:
   living_room_hue_sync_brightness:
     friendly_name: Living Room Sync Brightness
     level_template: "{{ ((state_attr('remote.living_room_hue_sync_box', 'brightness') | int) / 200) * 255 | int }}"
