@@ -28,6 +28,7 @@ hue:
   bridges: !include_dir_list hue_bridges
 remote: !include_dir_list remotes
 light: !include_dir_list lights
+switch: !include_dir_list switches
 
 
 mqtt: !include mqtt.yaml
