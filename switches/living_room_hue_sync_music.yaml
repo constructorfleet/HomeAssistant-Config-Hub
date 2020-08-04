@@ -1,6 +1,6 @@
 platform: template
 switches:
-  living_room_hue_sync_video:
+  living_room_hue_sync_music:
     friendly_name: Living Room Sync Music
     value_template: "{{ state_attr('remote.living_room_hue_sync_box', 'sync_mode') == 'music' }}"
     turn_on:
