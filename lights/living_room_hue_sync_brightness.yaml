@@ -18,4 +18,4 @@ lights:
       service: hue_sync_box.set_brightness
       data_template:
         entity_id: remote.living_room_hue_sync_box
-        brightness: "{{ brightness / 255 * 200 | int }}"
+        brightness: "{{ (brightness / 255 * 200) | int }}"
