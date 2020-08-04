@@ -24,6 +24,7 @@ frontend:
 config:
 
 isy994: !include isy994.yaml
+insteon: !include insteon.yaml
 hue:
   bridges: !include_dir_list hue_bridges
 remote: !include_dir_list remotes

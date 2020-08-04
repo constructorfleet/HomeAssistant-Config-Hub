@@ -1,0 +1,5 @@
+host: 10.0.11.155
+#ip_port: 25105
+username: !secret insteon_username
+password: !secret insteon_password
+hub_version: 1

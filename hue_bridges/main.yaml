@@ -1,3 +1,3 @@
-host:  10.0.12.20 
+host: 10.0.12.20 
 allow_unreachable: true
 allow_hue_groups: true
