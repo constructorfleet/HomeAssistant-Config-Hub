@@ -1,5 +1,5 @@
 platform: hue_sync_box
-name: Master Bedroom Room Hue Sync Box
+name: Master Bedroom Hue Sync Box
 ip_address: 10.0.12.149
 access_token: !secret hue_sync_master_bedroom_access_token
 scan_interval: 5
