@@ -1,6 +1,6 @@
 platform: template
 lights:
-  living_room_hue_sync_brightness:
+  master_bedroom_hue_sync_brightness:
     friendly_name: Living Room Sync Brightness
     level_template: "{{ (((state_attr('remote.living_room_hue_sync_box', 'brightness') | int) / 200) * 255) | int }}"
     value_template: "{{ state_attr('remote.living_room_hue_sync_box', 'sync_active') }}"

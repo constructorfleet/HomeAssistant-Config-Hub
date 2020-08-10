@@ -1,6 +1,6 @@
 platform: template
 switches:
-  living_room_hue_sync_video:
+  master_bedroom_hue_sync_video:
     friendly_name: Master Bedroom Sync Video
     value_template: "{{ state_attr('remote.master_bedroom_hue_sync_box', 'sync_mode') == 'video' }}"
     turn_on:

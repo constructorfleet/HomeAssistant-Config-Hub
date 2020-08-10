@@ -1,6 +1,6 @@
 platform: template
 switches:
-  living_room_hue_sync_music:
+  master_bedroom_hue_sync_music:
     friendly_name: Master Bedroom Sync Music
     value_template: "{{ state_attr('remote.master_bedroom_hue_sync_box', 'sync_mode') == 'music' }}"
     turn_on:
