@@ -1,0 +1,15 @@
+platform: template
+switches:
+  living_room_hue_sync_video:
+    friendly_name: Master Bedroom Sync Video
+    value_template: "{{ state_attr('remote.master_bedroom_hue_sync_box', 'sync_mode') == 'video' }}"
+    turn_on:
+      service: hue_sync_box.set_sync_mode
+      data:
+        entity_id: remote.master_bedroom_hue_sync_box
+        sync_mode: video
+    turn_off:
+      service: hue_sync_box.set_sync_mode
+      data:
+        entity_id: remote.master_bedroom_hue_sync_box
+        sync_mode: passthrough

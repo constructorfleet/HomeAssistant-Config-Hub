@@ -1,0 +1,21 @@
+platform: template
+lights:
+  living_room_hue_sync_brightness:
+    friendly_name: Master Bedroom Sync Brightness
+    level_template: "{{ (((state_attr('remote.master_bedroom_hue_sync_box', 'brightness') | int) / 200) * 255) | int }}"
+    value_template: "{{ state_attr('remote.master_bedroom_hue_sync_box', 'sync_active') }}"
+    turn_on:
+      service: hue_sync_box.set_brightness
+      data:
+        entity_id: remote.master_bedroom_hue_sync_box
+        brightness: 200
+    turn_off:
+      service: hue_sync_box.set_sync_mode
+      data:
+        entity_id: remote.master_bedroom_hue_sync_box
+        sync_mode: passthrough
+    set_level:
+      service: hue_sync_box.set_brightness
+      data_template:
+        entity_id: remote.master_bedroom_hue_sync_box
+        brightness: "{{ (brightness / 255 * 200) | int }}"
