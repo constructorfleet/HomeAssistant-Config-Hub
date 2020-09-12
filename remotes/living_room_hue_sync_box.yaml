@@ -1,5 +1,5 @@
 platform: hue_sync_box
 name: Living Room Hue Sync Box
-ip_address: 10.0.12.21
+ip_address: 10.0.13.122
 access_token: !secret hue_sync_access_token
 scan_interval: 5
